@@ -55,8 +55,8 @@ if [ "$LINUX_ARCH" == "x86_64" ]; then
     #unzip "gradle.zip"
     #mv "gradle-2.9" "$INSTALL_PATH"
 
-    cd "$INSTALL_PATH" && mv "android-sdk-linux" "android-sdk"
-    cd "$INSTALL_PATH" && mv "node-v0.12.9-linux-x64" "node"
+    cd "$INSTALL_PATH" && mv -f "android-sdk-linux" "android-sdk"
+    cd "$INSTALL_PATH" && mv -f "node-v0.12.9-linux-x64" "node"
     #cd "$INSTALL_PATH" && mv "gradle-2.9" "gradle"
 
     # Android SDK requires some x86 architecture libraries even on x64 system
@@ -73,8 +73,8 @@ else
     #unzip "gradle.zip"
     #mv "gradle-2.9" "$INSTALL_PATH"
 
-    cd "$INSTALL_PATH" && mv "android-sdk-linux" "android-sdk"
-    cd "$INSTALL_PATH" && mv "node-v0.12.9-linux-x86" "node"
+    cd "$INSTALL_PATH" && mv -f "android-sdk-linux" "android-sdk"
+    cd "$INSTALL_PATH" && mv -f "node-v0.12.9-linux-x86" "node"
     #cd "$INSTALL_PATH" && mv "gradle-2.9" "gradle"
 
 fi
