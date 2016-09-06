@@ -14,7 +14,7 @@
 #   Ionic Framework
 #   Gradle
 
-HOME_PATH=$(cd ~/ && pwd)
+HOME_PATH=/opt
 INSTALL_PATH=/opt
 ANDROID_SDK_PATH=/opt/android-sdk
 NODE_PATH=/opt/node
@@ -42,7 +42,7 @@ fi
 # Update all Ubuntu software repository lists
 apt-get update
 
-cd ~/Desktop
+#cd ~/Desktop
 
 if [ "$LINUX_ARCH" == "x86_64" ]; then
 
