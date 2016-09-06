@@ -48,16 +48,16 @@ if [ "$LINUX_ARCH" == "x86_64" ]; then
 
     wget -c "$NODE_X64" -O "nodejs.tgz" --no-check-certificate
     wget -c "$ANDROID_SDK_X64" -O "android-sdk.tgz" --no-check-certificate
-    wget -c "$GRADLE_ALL" -O "gradle.zip" --no-check-certificate
+    #wget -c "$GRADLE_ALL" -O "gradle.zip" --no-check-certificate
 
     tar zxf "nodejs.tgz" -C "$INSTALL_PATH"
     tar zxf "android-sdk.tgz" -C "$INSTALL_PATH"
-    unzip "gradle.zip"
-    mv "gradle-2.9" "$INSTALL_PATH"
+    #unzip "gradle.zip"
+    #mv "gradle-2.9" "$INSTALL_PATH"
 
     cd "$INSTALL_PATH" && mv "android-sdk-linux" "android-sdk"
     cd "$INSTALL_PATH" && mv "node-v0.12.9-linux-x64" "node"
-    cd "$INSTALL_PATH" && mv "gradle-2.9" "gradle"
+    #cd "$INSTALL_PATH" && mv "gradle-2.9" "gradle"
 
     # Android SDK requires some x86 architecture libraries even on x64 system
     apt-get install -qq -y libc6:i386 libgcc1:i386 libstdc++6:i386 libz1:i386
@@ -66,16 +66,16 @@ else
 
     wget -c "$NODE_X86" -O "nodejs.tgz" --no-check-certificate
     wget -c "$ANDROID_SDK_X86" -O "android-sdk.tgz" --no-check-certificate
-    wget -c "$GRADLE_ALL" -O "gradle.zip" --no-check-certificate
+    #wget -c "$GRADLE_ALL" -O "gradle.zip" --no-check-certificate
 
     tar zxf "nodejs.tgz" -C "$INSTALL_PATH"
     tar zxf "android-sdk.tgz" -C "$INSTALL_PATH"
-    unzip "gradle.zip"
-    mv "gradle-2.9" "$INSTALL_PATH"
+    #unzip "gradle.zip"
+    #mv "gradle-2.9" "$INSTALL_PATH"
 
     cd "$INSTALL_PATH" && mv "android-sdk-linux" "android-sdk"
     cd "$INSTALL_PATH" && mv "node-v0.12.9-linux-x86" "node"
-    cd "$INSTALL_PATH" && mv "gradle-2.9" "gradle"
+    #cd "$INSTALL_PATH" && mv "gradle-2.9" "gradle"
 
 fi
 
@@ -88,13 +88,13 @@ cd ~/
 echo "export PATH=\$PATH:$ANDROID_SDK_PATH/tools" >> ".profile"
 echo "export PATH=\$PATH:$ANDROID_SDK_PATH/platform-tools" >> ".profile"
 echo "export PATH=\$PATH:$NODE_PATH/bin" >> ".profile"
-echo "export PATH=\$PATH:$GRADLE_PATH/bin" >> ".profile"
+#echo "export PATH=\$PATH:$GRADLE_PATH/bin" >> ".profile"
 
 # Add Android and NPM paths to the temporary user path to complete installation
 export PATH=$PATH:$ANDROID_SDK_PATH/tools
 export PATH=$PATH:$ANDROID_SDK_PATH/platform-tools
 export PATH=$PATH:$NODE_PATH/bin
-export PATH=$PATH:$GRADLE_PATH/bin
+#export PATH=$PATH:$GRADLE_PATH/bin
 
 # Install JDK and Apache Ant
 apt-get -qq -y install default-jdk ant
@@ -110,12 +110,12 @@ npm install -g cordova
 npm install -g ionic
 
 cd "$INSTALL_PATH" && chmod 777 "node" -R
-cd "$INSTALL_PATH" && chmod 777 "gradle" -R
+#cd "$INSTALL_PATH" && chmod 777 "gradle" -R
 
 # Clean up any files that were downloaded from the internet
-cd ~/Desktop && rm "android-sdk.tgz"
-cd ~/Desktop && rm "nodejs.tgz"
-cd ~/Desktop && rm "gradle.zip"
+#cd ~/Desktop && rm "android-sdk.tgz"
+#cd ~/Desktop && rm "nodejs.tgz"
+#cd ~/Desktop && rm "gradle.zip"
 
 echo "----------------------------------"
 echo "Restart your Ubuntu session for installation to complete..."
